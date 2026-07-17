@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Api-Gateway
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.web.servlet.handler: TRACE
+    org.springframework.web.servlet.mvc: TRACE
+
+jwt:
+  secret: ${JWT_SECRET:"iamshivanshmishraiamajavaafullstackdeveloperworkingwithspringbootsqldatabase"}

@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "DiscoveryServiceApplication",
+            "request": "launch",
+            "mainClass": "dev.shivansh.discoveryService.DiscoveryServiceApplication"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-RedirectingServiceApplication<Redirecting-Service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "dev.shivansh.redirectService.RedirectingServiceApplication",
+            "projectName": "Redirecting-Service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
