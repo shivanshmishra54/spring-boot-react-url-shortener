@@ -20,17 +20,15 @@ ShortUrl is an enterprise-grade, high-performance, and secure URL shortening and
 
 | Landing Page (Light Mode) | Dashboard (Dark Mode) |
 | --- | --- |
-| ![Landing Page](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80) | ![Dashboard](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80) |
+| <img src="https://github.com/user-attachments/assets/e3258ca7-51c7-4bcd-aef8-a8bab7ff104f" width="100%" alt="Landing Page"/> | <img src="https://github.com/user-attachments/assets/5fa74ac6-81e9-491b-aa2c-fecffd324f84" width="100%" alt="Dashboard"/> |
 
-| JWT Authentication Modal | Link Analytics lookup |
+| JWT Authentication Modal | Sign Up Form |
 | --- | --- |
-| ![Auth Modal](https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80) | ![Analytics Lookup](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80) |
+| <img src="https://github.com/user-attachments/assets/08555fff-cafc-485a-be4e-053650fe03fb" width="100%" alt="Auth Modal"/> | <img src="https://github.com/user-attachments/assets/919dd0db-95f6-46fa-a3b9-f121b2ae95e4" width="100%" alt="Sign Up"/> |
 
-> [!TIP]
-> To update these screenshots with your own:
-> 1. Take screenshots of your running app.
-> 2. Save them inside a `/screenshots` folder in the root directory.
-> 3. Replace the placeholder URLs in this section with relative paths (e.g. `./screenshots/landing_page.png`).
+| Pricing Page | Link Analytics Lookup |
+| --- | --- |
+| <img src="https://github.com/user-attachments/assets/26559486-b591-4d4b-a36c-86e99c5086d1" width="100%" alt="Pricing Page"/> | <img src="https://github.com/user-attachments/assets/51d7a8a3-31d0-4d3c-b988-22ee1f63f92b" width="100%" alt="Analytics Lookup"/> |
 
 ---
 
