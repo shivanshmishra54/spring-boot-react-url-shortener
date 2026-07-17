@@ -20,15 +20,15 @@ ShortUrl is an enterprise-grade, high-performance, and secure URL shortening and
 
 | Landing Page (Light Mode) | Dashboard (Dark Mode) |
 | --- | --- |
-| ![Landing Page](<img width="932" height="590" alt="image" src="https://github.com/user-attachments/assets/e3258ca7-51c7-4bcd-aef8-a8bab7ff104f" />
-) | ![Dashboard](<img width="940" height="598" alt="image" src="https://github.com/user-attachments/assets/5fa74ac6-81e9-491b-aa2c-fecffd324f84" />
-) |
+| <img src="https://github.com/user-attachments/assets/e3258ca7-51c7-4bcd-aef8-a8bab7ff104f" width="100%" alt="Landing Page"/> | <img src="https://github.com/user-attachments/assets/5fa74ac6-81e9-491b-aa2c-fecffd324f84" width="100%" alt="Dashboard"/> |
 
-| JWT Authentication Modal | Link Analytics lookup |
+| JWT Authentication Modal | Sign Up Form |
 | --- | --- |
-| ![Auth Modal](<img width="947" height="599" alt="image" src="https://github.com/user-attachments/assets/08555fff-cafc-485a-be4e-053650fe03fb" />
-) | ![Analytics Lookup](<img width="947" height="599" alt="image" src="https://github.com/user-attachments/assets/919dd0db-95f6-46fa-a3b9-f121b2ae95e4" />
-) |
+| <img src="https://github.com/user-attachments/assets/08555fff-cafc-485a-be4e-053650fe03fb" width="100%" alt="Auth Modal"/> | <img src="https://github.com/user-attachments/assets/919dd0db-95f6-46fa-a3b9-f121b2ae95e4" width="100%" alt="Sign Up"/> |
+
+| Pricing Page | Link Analytics Lookup |
+| --- | --- |
+| <img src="https://github.com/user-attachments/assets/26559486-b591-4d4b-a36c-86e99c5086d1" width="100%" alt="Pricing Page"/> | <img src="https://github.com/user-attachments/assets/51d7a8a3-31d0-4d3c-b988-22ee1f63f92b" width="100%" alt="Analytics Lookup"/> |
 
 ---
 
@@ -147,4 +147,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-*Developed by Shivansh.*
+*Developed by [Shivansh](https://github.com/shivanshmishra54) — Connect on [LinkedIn](https://www.linkedin.com/in/shivansh-mishra54/)*
