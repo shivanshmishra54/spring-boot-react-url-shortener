@@ -16,6 +16,24 @@ ShortUrl is an enterprise-grade, high-performance, and secure URL shortening and
 
 ---
 
+## 📸 Screenshots
+
+| Landing Page (Light Mode) | Dashboard (Dark Mode) |
+| --- | --- |
+| ![Landing Page](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80) | ![Dashboard](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80) |
+
+| JWT Authentication Modal | Link Analytics lookup |
+| --- | --- |
+| ![Auth Modal](https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80) | ![Analytics Lookup](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80) |
+
+> [!TIP]
+> To update these screenshots with your own:
+> 1. Take screenshots of your running app.
+> 2. Save them inside a `/screenshots` folder in the root directory.
+> 3. Replace the placeholder URLs in this section with relative paths (e.g. `./screenshots/landing_page.png`).
+
+---
+
 ## 🛠️ Tech Stack
 
 ### Frontend
