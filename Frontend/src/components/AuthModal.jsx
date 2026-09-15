@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Link2, ArrowRight, Eye, EyeOff, AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../config';
 
 export default function AuthModal({ mode, onClose, setGlobalUsername }) {
   // mode can be 'login' or 'signup'
@@ -48,7 +49,7 @@ export default function AuthModal({ mode, onClose, setGlobalUsername }) {
           payload.username = username.trim();
         }
 
-        const response = await fetch(`http://localhost:8082/auth/${endpoint}`, {
+        const response = await fetch(`${API_URL}/auth/${endpoint}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)

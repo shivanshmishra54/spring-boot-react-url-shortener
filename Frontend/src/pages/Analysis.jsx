@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import { BarChart3, Search, Calendar, Globe, MousePointerClick, ExternalLink, ShieldAlert, BarChart2 } from 'lucide-react';
+import { API_URL } from '../config';
 
 export default function Analysis({ username, onLogout, onOpenAuth, onOpenInfo }) {
   const [shortCode, setShortCode] = useState('');
@@ -24,7 +25,7 @@ export default function Analysis({ username, onLogout, onOpenAuth, onOpenInfo })
 
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:8082/api/v1/analytics/${code}`, {
+      const response = await fetch(`${API_URL}/api/v1/analytics/${code}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -118,8 +119,8 @@ export default function Analysis({ username, onLogout, onOpenAuth, onOpenInfo })
             <div className="p-6 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-sm space-y-4">
               <div>
                 <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Short Link</span>
-                <a href={`http://localhost:8082/${analytics.shortUrl}`} target="_blank" rel="noreferrer" className="flex items-center text-sm font-bold text-blue-600 hover:underline mt-1">
-                  http://localhost:8082/{analytics.shortUrl}
+                <a href={`${API_URL}/${analytics.shortUrl}`} target="_blank" rel="noreferrer" className="flex items-center text-sm font-bold text-blue-600 hover:underline mt-1">
+                  {API_URL}/{analytics.shortUrl}
                   <ExternalLink className="ml-1 h-3.5 w-3.5" />
                 </a>
               </div>

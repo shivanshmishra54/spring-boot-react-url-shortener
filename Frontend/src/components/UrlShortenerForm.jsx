@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link2, ArrowRight, Copy, Check } from 'lucide-react';
+import { API_URL } from '../config';
 
 export default function UrlShortenerForm({ username }) {
   const [longUrl, setLongUrl] = useState('');
@@ -20,14 +21,14 @@ export default function UrlShortenerForm({ username }) {
       const token = localStorage.getItem('token');
       if (token) headers['Authorization'] = `Bearer ${token}`;
       
-      const response = await fetch('http://localhost:8082/api/v1/shorten', {
+      const response = await fetch(`${API_URL}/api/v1/shorten`, {
         method: 'POST',
         headers,
         body: JSON.stringify({ longUrl })
       });
       if (!response.ok) throw new Error('Failed to shorten URL');
       const data = await response.json();
-      setShortUrl(data.shortUrl ? data.shortUrl.replace('8081', '8082') : '');
+      setShortUrl(data.shortUrl || '');
     } catch (err) {
       setError(err.message || 'Something went wrong');
     } finally {

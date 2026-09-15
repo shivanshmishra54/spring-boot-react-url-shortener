@@ -147,4 +147,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-*Developed by Shivansh.*
+*Developed by [Shivansh](https://github.com/shivanshmishra54) — Connect on [LinkedIn](https://www.linkedin.com/in/shivansh-mishra54/)*

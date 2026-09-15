@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import Header from '../components/Header';
 import UrlShortenerForm from '../components/UrlShortenerForm';
 import { ExternalLink, BarChart2, Calendar, MousePointerClick, Link2, Trash2, Copy, Check } from 'lucide-react';
+import { API_URL } from '../config';
 
 export default function Dashboard({ username, onLogout, onOpenAuth, onOpenInfo }) {
   const [history, setHistory] = useState([]);
@@ -17,7 +18,7 @@ export default function Dashboard({ username, onLogout, onOpenAuth, onOpenInfo }
   }, [username]);
 
   const handleCopy = (shortCode) => {
-    const fullUrl = `http://localhost:8082/${shortCode}`;
+    const fullUrl = `${API_URL}/${shortCode}`;
     navigator.clipboard.writeText(fullUrl);
     setCopiedId(shortCode);
     setTimeout(() => setCopiedId(null), 2000);
@@ -27,7 +28,7 @@ export default function Dashboard({ username, onLogout, onOpenAuth, onOpenInfo }
     if (!window.confirm("Are you sure you want to delete this short URL?")) return;
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8082/api/v1/delete/${shortCode}`, {
+      const response = await fetch(`${API_URL}/api/v1/delete/${shortCode}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -44,7 +45,7 @@ export default function Dashboard({ username, onLogout, onOpenAuth, onOpenInfo }
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8082/api/v1/history', {
+      const response = await fetch(`${API_URL}/api/v1/history`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -114,8 +115,8 @@ export default function Dashboard({ username, onLogout, onOpenAuth, onOpenInfo }
                         {item.url}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <a href={`http://localhost:8082/${item.shortUrl}`} target="_blank" rel="noreferrer" className="flex items-center text-sm font-medium text-blue-600 hover:underline">
-                          http://localhost:8082/{item.shortUrl}
+                        <a href={`${API_URL}/${item.shortUrl}`} target="_blank" rel="noreferrer" className="flex items-center text-sm font-medium text-blue-600 hover:underline">
+                          {API_URL}/{item.shortUrl}
                           <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
                         </a>
                       </td>

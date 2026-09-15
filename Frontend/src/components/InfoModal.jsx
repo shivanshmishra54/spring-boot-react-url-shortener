@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Check, Code, Database, Globe, Layers, Send, CreditCard, Shield, HelpCircle } from 'lucide-react';
+import { API_URL } from '../config';
 
 export default function InfoModal({ type, onClose, username }) {
   // state for contact form
@@ -67,7 +68,7 @@ export default function InfoModal({ type, onClose, username }) {
 
 // Response
 {
-  "shortUrl": "http://localhost:8082/xyzabc"
+  "shortUrl": "${API_URL}/xyzabc"
 }`}
                 </div>
               </div>
@@ -110,7 +111,7 @@ export default function InfoModal({ type, onClose, username }) {
             </p>
             <div className="bg-slate-900 p-5 rounded-lg border border-slate-800 text-slate-300 text-xs font-mono mb-6 overflow-x-auto whitespace-pre">
 {`               [ Client / React Frontend ]
-                            | (Port 8082 / CORS Allowed)
+                            | (API Gateway / CORS Allowed)
                             v
                     [ API Gateway ]
                (Routes to internal services)
