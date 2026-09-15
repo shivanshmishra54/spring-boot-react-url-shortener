@@ -1,0 +1,87 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: url-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: url_shortener
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - url-network
+
+  discovery-service:
+    build: ./Backend/Discovery-Service
+    container_name: url-discovery-service
+    ports:
+      - "8761:8761"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8761/actuator/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - url-network
+
+  url-shortener-service:
+    build: ./Backend/URL-Shortener-Service
+    container_name: url-shortener-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/url_shortener
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      EUREKA_URL: http://discovery-service:8761/eureka/
+      BASE_URL: ${BASE_URL:-http://localhost:8082}
+      JWT_SECRET: ${JWT_SECRET:-iamshivanshmishraiamajavaafullstackdeveloperworkingwithspringbootsqldatabase}
+    depends_on:
+      mysql:
+        condition: service_healthy
+      discovery-service:
+        condition: service_healthy
+    networks:
+      - url-network
+
+  redirect-service:
+    build: ./Backend/Redirecting-Service
+    container_name: url-redirect-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/url_shortener
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      EUREKA_URL: http://discovery-service:8761/eureka/
+    depends_on:
+      mysql:
+        condition: service_healthy
+      discovery-service:
+        condition: service_healthy
+    networks:
+      - url-network
+
+  api-gateway:
+    build: ./Backend/Api-Gateway
+    container_name: url-api-gateway
+    ports:
+      - "8082:8082"
+    environment:
+      EUREKA_URL: http://discovery-service:8761/eureka/
+      JWT_SECRET: ${JWT_SECRET:-iamshivanshmishraiamajavaafullstackdeveloperworkingwithspringbootsqldatabase}
+    depends_on:
+      discovery-service:
+        condition: service_healthy
+    networks:
+      - url-network
+
+volumes:
+  mysql_data:
+
+networks:
+  url-network:
+    driver: bridge

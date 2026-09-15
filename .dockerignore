@@ -1,0 +1,10 @@
+.git
+.gitignore
+.idea
+.vscode
+**/target
+**/node_modules
+**/dist
+**/.mvn/wrapper/maven-wrapper.jar
+*.md
+Frontend
