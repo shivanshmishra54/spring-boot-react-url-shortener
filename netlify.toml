@@ -3,6 +3,25 @@
   publish = "Frontend/dist"
   command = "npm run build"
 
+# ─── Netlify Server-Side Proxy ─────────────────────────────────────────────
+# When tunnel URL changes: update TUNNEL_URL below and `git push` — done!
+# Frontend JS bundle NEVER needs to change.
+[build.environment]
+  TUNNEL_URL = "https://aluminium-stand-allocated-psychology.trycloudflare.com"
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://aluminium-stand-allocated-psychology.trycloudflare.com/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/auth/*"
+  to = "https://aluminium-stand-allocated-psychology.trycloudflare.com/auth/:splat"
+  status = 200
+  force = true
+
+# ─── SPA Fallback ──────────────────────────────────────────────────────────
 [[redirects]]
   from = "/*"
   to = "/index.html"

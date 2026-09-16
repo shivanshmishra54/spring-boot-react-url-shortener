@@ -11,7 +11,6 @@ import org.springframework.web.servlet.function.ServerResponse;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-
 import static org.springframework.cloud.gateway.server.mvc.filter.LoadBalancerFilterFunctions.lb;
 import static org.springframework.cloud.gateway.server.mvc.handler.GatewayRouterFunctions.route;
 import static org.springframework.cloud.gateway.server.mvc.handler.HandlerFunctions.http;
@@ -65,7 +64,9 @@ public class ApiGatewayApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-						.allowedOrigins("https://shortturll.netlify.app", "https://celebrities-seal-teenage-facing.trycloudflare.com", "http://localhost:5173", "http://localhost:3000")
+						.allowedOrigins("https://shortturll.netlify.app",
+								"https://aluminium-stand-allocated-psychology.trycloudflare.com",
+								"http://localhost:5173", "http://localhost:3000")
 						.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD")
 						.allowedHeaders("*")
 						.allowCredentials(true);
